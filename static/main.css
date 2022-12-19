@@ -5,41 +5,17 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+    background-color: #e3fdfd;
 }
 
 .App {
     text-align: center;
+    
 }
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+table {
+    margin-left:auto;
+    margin-right:auto;
 }
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-.heart {
-    color: #ff0000;
-}
-
-.small {
-    font-size: 0.75rem;
+td{
+    padding:10px;
 }

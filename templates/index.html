@@ -4,15 +4,29 @@
 
 <body>
     <div class="App">
-        <header class="App-header">
-            <img src="{{ url_for('static', filename='Octocat.png') }}" class="App-logo" alt="logo" />
-            <p>
-                GitHub Codespaces <span class="heart">♥️</span> Flask
-            </p>
-            <p class="small">
-                Edit <code>templates/index.html</code> and refresh to see your changes!
-            </p>
-        </header>
+        <h2>Simple Todos</h2>
+        <table>
+            <thead>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </thead>
+            <tr>
+                <td>Get a haircut</td>
+                <td>Dec 31, 2022</td>
+                <td>TODO</td>
+            </tr>
+            <tr>
+                <td>Wrap Christmas presents</td>
+                <td>Dec 24, 2022</td>
+                <td>DONE</td>
+            </tr>
+            <tr>
+                <td>Visit Sawan</td>
+                <td>January 4, 2023</td>
+                <td>TODO</td>
+            </tr>
+        </table>
     </div>
 </body>
 
