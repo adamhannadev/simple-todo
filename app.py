@@ -39,7 +39,7 @@ def createtodo():
 def deletetodo(todo):
    if request.method == 'POST':
       try:
-         rowid = todo 
+         rowid = todo
          
          with sql.connect("database.db") as con:
             cur = con.cursor()
@@ -53,7 +53,7 @@ def deletetodo(todo):
          msg = "Error in deleting task"
       
       finally:
-         return redirect("list")
+         return redirect("/list")
          con.close()
 
 @app.route('/list')
