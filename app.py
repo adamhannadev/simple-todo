@@ -35,13 +35,34 @@ def createtodo():
          return redirect("list")
          con.close()
 
+@app.route('/deletetodo',methods = ['POST', 'GET'])
+def deletetodo():
+   if request.method == 'POST':
+      try:
+         rowid = request.form['rowid']
+                 
+         with sql.connect("database.db") as con:
+            cur = con.cursor()
+            
+            cur.execute("DELETE FROM todos WHERE rowid=?",(rowid))
+            
+            con.commit()
+            msg = "Task succesfully delete"
+      except:
+         con.rollback()
+         msg = "Error in deleting task"
+      
+      finally:
+         return redirect("list")
+         con.close()
+
 @app.route('/list')
 def list():
    con = sql.connect("database.db")
    con.row_factory = sql.Row
    
    cur = con.cursor()
-   cur.execute("select * from todos")
+   cur.execute("select rowid,description,due_date,status from todos")
    
    rows = cur.fetchall();
    return render_template("list.html",rows = rows)

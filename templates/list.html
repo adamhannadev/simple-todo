@@ -4,6 +4,7 @@
    
       <table border = 1>
          <thead>
+            <td>Task ID</td>
             <td>Description</td>
             <td>Due Date</td>
             <td>Status</td>
@@ -11,6 +12,7 @@
          
          {% for row in rows %}
             <tr>
+                <td>{{row["rowid"]}}</td>
                <td>{{row["description"]}}</td>
                <td>{{row["due_date"]}}</td>
                <td> {{ row["status"]}}</td>
@@ -18,7 +20,15 @@
          {% endfor %}
       </table>
       
-      <a href = "/">Go back to home page</a>
+      <form action = "{{ url_for('deletetodo') }}" method = "POST">
+        <h3>Delete Todo entry</h3>
+        Enter Task ID to delete<br>
+        <input type = "text" name = "rowid" /></br>
+             
+        <input type = "submit" value = "submit" /><br>
+     </form>
+     <br>
+     <a href = "/">Go back to home page</a>
       
    </body>
 </html>
