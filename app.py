@@ -35,12 +35,12 @@ def createtodo():
          return redirect("list")
          con.close()
 
-@app.route('/deletetodo',methods = ['POST', 'GET'])
-def deletetodo():
+@app.route('/deletetodo/<todo>',methods = ['POST', 'GET'])
+def deletetodo(todo):
    if request.method == 'POST':
       try:
-         rowid = request.form['rowid']
-                 
+         rowid = todo 
+         
          with sql.connect("database.db") as con:
             cur = con.cursor()
             
